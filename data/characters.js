@@ -62,7 +62,8 @@ window.CHARACTERS = [
       "Whatever he is, Nines trusts him completely."
     ],
     "references": [
-      "assets/img/gallery/eights-1.webp"
+      "assets/img/gallery/eights-1.webp",
+      "assets/img/gallery/eights-2.webp"
     ],
     "links": []
   },
