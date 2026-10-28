@@ -14,7 +14,7 @@ if(d){const list=C,id=new URLSearchParams(location.search).get('id'),i=Math.max(
  const base='character.html?id=',prev=list[(i-1+list.length)%list.length],next=list[(i+1)%list.length];
  const ps=a=>(a||[]).filter(Boolean).map(p=>`<p>${e(p)}</p>`).join('');
  d.innerHTML=`<section class="panel intro"><div class="gl" id="mainimg"><img src="${e(x.image)}" alt="${e(x.name)}" data-full="${e(x.image)}"></div>
- <div><h1 class="glitch" data-text="${e((x.fullName||x.name).toUpperCase())}">${e((x.fullName||x.name).toUpperCase())}</h1>
+ <div><h1 class="glitch scr" id="cname" aria-label="${e((x.fullName||x.name).toUpperCase())}" data-text="${e((x.fullName||x.name).toUpperCase())}"><span class="scr-real">${e((x.fullName||x.name).toUpperCase())}</span></h1>
  ${x.species?`<p class="meta">${e(x.species)}</p>`:''}<p class="meta"><b>${e(x.title)}</b></p>
  ${x.owner?`<p class="meta">USER: <b>${e(x.owner)}</b></p>`:''}${x.note?`<p class="note">${e(x.note)}</p>`:''}<div class="lore">${ps([x.intro])}</div>
  ${(x.links||[]).length?`<div class="links">${x.links.map(l=>`<a class="btn" href="${e(l.url)}" target="_blank" rel="noopener">${e(l.label)}</a>`).join('')}</div>`:''}</div></section>
@@ -38,9 +38,30 @@ const a=p.a*(.6+.4*Math.sin(p.t*3));x.fillStyle=`rgba(250,116,0,${a})`;x.shadowC
 if(p.r>1.9){x.fillRect(p.x-p.r*3,p.y-.3,p.r*6,.6);x.fillRect(p.x-.3,p.y-p.r*3,.6,p.r*6)}}
 requestAnimationFrame(f)}requestAnimationFrame(f)})();
 
-(function(){const w=document.getElementById('mainimg');if(!w||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-const img=w.querySelector('img'),go=()=>{const src=img.currentSrc||img.src;
- ['r','b','s1','s2','s3'].forEach(k=>{const c=document.createElement('div');c.className='gl-l gl-'+k;c.style.backgroundImage=`url("${src}")`;c.setAttribute('aria-hidden','true');w.appendChild(c)});
- w.classList.add('glitching');setTimeout(()=>{w.classList.remove('glitching');w.querySelectorAll('.gl-l').forEach(n=>n.remove())},1100)};
- img.complete?go():img.addEventListener('load',go,{once:true});
- addEventListener('pageshow',ev=>{if(ev.persisted)go()});})();
+(function(){const w=document.getElementById('mainimg');if(!w)return;
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const img=w.querySelector('img');let busy=false;
+function go(){if(busy)return;busy=true;const src=img.currentSrc||img.src;
+ w.querySelectorAll('.gl-l').forEach(n=>n.remove());w.classList.remove('glitching');
+ ['r','b','s1','s2','s3'].forEach(k=>{const c=document.createElement('img');c.src=src;c.alt='';c.className='gl-l gl-'+k;c.setAttribute('aria-hidden','true');w.appendChild(c)});
+ void w.offsetWidth;requestAnimationFrame(()=>{w.classList.add('glitching');
+ setTimeout(()=>{w.classList.remove('glitching');w.querySelectorAll('.gl-l').forEach(n=>n.remove());busy=false},1150)});}
+function ready(){const p=(img.decode?img.decode():Promise.resolve()).catch(()=>{});p.then(()=>{if(img.naturalWidth)go();else img.addEventListener('load',go,{once:true})});}
+img.complete&&img.naturalWidth?ready():img.addEventListener('load',ready,{once:true});
+setTimeout(()=>{if(!w.dataset.played&&img.naturalWidth)go()},2500);
+w.addEventListener('animationstart',()=>{w.dataset.played=1},{once:true});
+addEventListener('pageshow',ev=>{if(ev.persisted){busy=false;go()}});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!w.dataset.played)go()});})();
+
+(function(){const h=document.getElementById('cname');if(!h)return;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const real=h.querySelector('.scr-real'),T=real.textContent,G='#_%?!@$&*/\\<>[]{}=+~^|░▒▓█▚▞¥§Ø∆※'.split(''),Z=['\u0336','\u0337','\u0334'];
+const ov=document.createElement('span');ov.className='scr-ov';ov.setAttribute('aria-hidden','true');h.appendChild(ov);
+let t0=null;const D=1100,rnd=a=>a[Math.random()*a.length|0];
+function run(){h.classList.add('scrambling');t0=performance.now();requestAnimationFrame(f)}
+function f(now){const p=Math.min(1,(now-t0)/D);let out='';
+ for(let i=0;i<T.length;i++){const ch=T[i],lock=(i/T.length)*.7+.25;
+  if(ch===' '||p>=lock+Math.random()*.05){out+=ch===' '?' ':(p<lock+.08&&Math.random()<.25?'<i class="fl">'+ch+'</i>':ch.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])));continue}
+  let g=rnd(G).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));if(Math.random()<.08)g+=rnd(Z);
+  out+=Math.random()<.3?'<b class="o">'+g+'</b>':g}
+ ov.innerHTML=out;if(p<1)setTimeout(()=>requestAnimationFrame(f),45);else{h.classList.remove('scrambling');ov.innerHTML=''}}
+run();addEventListener('pageshow',e=>{if(e.persisted)run()});})();
