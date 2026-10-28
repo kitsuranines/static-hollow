@@ -66,7 +66,15 @@ window.CHARACTERS = [
     "image": "assets/img/characters/roger.webp",
     "intro": "",
     "lore": [
-      "Roger is Nines’ small, three-eyed fox companion: rude, suspicious, judgmental, and almost always unimpressed. His third eye sees sin—cruelty, betrayal, selfishness, hypocrisy, and all the things people would rather keep hidden—which is the main reason he has so little patience for anyone. Roger is believed to have formed from the accumulated ugliness Nines was forced to witness through humanity’s perception of her, a creature born from everything people revealed about themselves while trying to define her. Most of the time, he appears as a small fox, but his true form is a massive horned fox demon, menacing and saturated with orange energy. His enormous horns are cracked from the pressure, supernatural light glowing through the fractures as though something inside them is close to bursting free. Roger is fiercely loyal to Nines and deeply distrustful of nearly everyone else. Where Nines sees what people project onto her, Roger sees what they hide within themselves. He judges accordingly."
+      "Roger is Nines’ small, three-eyed fox companion: rude, suspicious, judgmental, and almost always unimpressed.",
+      "His third eye sees sin.",
+      "Cruelty, betrayal, selfishness, hypocrisy: Roger sees the things people would rather keep hidden. It is the main reason he has so little patience for anyone.",
+      "Roger is believed to have formed from the accumulated ugliness Nines was forced to witness through humanity’s perception of her, becoming a creature born from everything people revealed about themselves while trying to define her.",
+      "Most of the time, he appears as a small fox.",
+      "His true form is a massive horned fox demon, menacing and saturated with orange energy. His enormous horns are cracked from the pressure, supernatural light glowing through the fractures as though something inside them is close to bursting free.",
+      "Roger is fiercely loyal to Nines and deeply distrustful of nearly everyone else.",
+      "Where Nines sees what people project onto her, Roger sees what they hide within themselves.",
+      "He judges accordingly."
     ],
     "references": [
       "assets/img/gallery/roger-1.webp",
