@@ -13,7 +13,22 @@ window.CHARACTERS = [
     "image": "assets/img/characters/nines.webp",
     "intro": "",
     "lore": [
-      "Kitsura Nines was never born. She was imagined. Rumors, accusations, admiration, hatred, and assumptions—thousands of conflicting ideas about who she was—eventually became something of their own: a Construct, a living entity shaped and sustained by collective perception. The more people watch her, discuss her, love her, hate her, or attempt to define her, the more tangible she becomes. Attention is attention. Most of the time, Nines appears relatively ordinary: a small woman with pale skin, short white hair, enormous fox ears, a massive tail, and amber-orange eyes. But that isn’t what she truly looks like. In her true form, the illusion begins to come apart. Glowing orange seams appear across her body, revealing where countless contradictory perceptions have been forced together into a single being, while a spectral third eye—the Eye of Attribution—opens upon her forehead, allowing her to perceive the intentions, projections, and assumptions others attach to her. Nines is mischievous, theatrical, stubbornly playful, and notoriously difficult to embarrass, but beneath the arrogance and trolling, she is fiercely loyal to the few people she genuinely trusts. The internet didn’t create Nines; it simply perfected the conditions for her existence. Every post is a ritual, every screenshot an artifact, every argument another invocation. Nines doesn’t need to be loved. She only needs people to keep looking. And if they’re going to watch anyway? She might as well give them a show."
+      "“You thought about her for too long. Now she’s real.”",
+      "Kitsura Nines was never born. She was imagined.",
+      "Rumors, accusations, admiration, hatred, assumptions—thousands of conflicting ideas about who she was eventually became something of their own: a Construct, a living entity shaped and sustained by collective perception.",
+      "The more people watch her, discuss her, love her, hate her, or attempt to define her, the more tangible she becomes.",
+      "Attention is attention.",
+      "Most of the time, Nines appears relatively ordinary: a small woman with pale skin, short white hair, enormous fox ears, a massive tail, and amber-orange eyes.",
+      "But that isn’t what she truly looks like.",
+      "In her true form, the illusion begins to come apart. Glowing orange seams appear across her body, revealing where countless contradictory perceptions have been forced together into a single being. A spectral third eye known as the Eye of Attribution opens upon her forehead, allowing her to perceive the intentions, projections, and assumptions others attach to her.",
+      "Nines is mischievous, theatrical, stubbornly playful, and notoriously difficult to embarrass. Beneath the arrogance and trolling, however, she is fiercely loyal to the few people she genuinely trusts.",
+      "The internet didn’t create Nines.",
+      "It simply perfected the conditions for her existence.",
+      "Every post is a ritual.\nEvery screenshot an artifact.\nEvery argument another invocation.",
+      "Nines doesn’t need to be loved.",
+      "She only needs people to keep looking.",
+      "And if they’re going to watch anyway?",
+      "She might as well give them a show."
     ],
     "references": [
       "assets/img/gallery/nines-1.webp",
