@@ -9,7 +9,7 @@ window.CHARACTERS = [
     "title": "The Construct",
     "species": "Marble Fox",
     "owner": "Nines",
-    "note": "NO NSFW DO NOT SHIP WITH ANYONE BUT EIGHTS",
+    "note": "",
     "image": "assets/img/characters/nines.webp",
     "intro": "",
     "lore": [
@@ -29,7 +29,7 @@ window.CHARACTERS = [
     "title": "The Unseen",
     "species": "Gray Wolf",
     "owner": "Nines",
-    "note": "NO NSFW DO NOT SHIP WITH ANYONE BUT NINES",
+    "note": "",
     "image": "assets/img/characters/eights.webp",
     "intro": "",
     "lore": [
