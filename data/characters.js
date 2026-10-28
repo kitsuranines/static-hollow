@@ -129,7 +129,7 @@ window.CHARACTERS = [
     "image": "assets/img/characters/ysr.webp",
     "intro": "",
     "lore": [],
-    "references": [],
+    "references": ["assets/img/gallery/ysr-1.webp", "assets/img/gallery/ysr-2.webp", "assets/img/gallery/ysr-3.webp"],
     "links": []
   },
   {
@@ -143,7 +143,7 @@ window.CHARACTERS = [
     "image": "assets/img/characters/lythria.webp",
     "intro": "",
     "lore": [],
-    "references": [],
+    "references": ["assets/img/gallery/lythria-1.webp"],
     "links": []
   },
   {
@@ -157,7 +157,7 @@ window.CHARACTERS = [
     "image": "assets/img/characters/yui-kaminari.webp",
     "intro": "",
     "lore": [],
-    "references": [],
+    "references": ["assets/img/gallery/yui-kaminari-1.webp"],
     "links": []
   }
 ];
