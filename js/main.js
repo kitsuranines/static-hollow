@@ -16,7 +16,7 @@ if(d){const list=C,id=new URLSearchParams(location.search).get('id'),i=Math.max(
  d.innerHTML=`<section class="panel intro"><div class="gl" id="mainimg"><img src="${e(x.image)}" alt="${e(x.name)}" data-full="${e(x.image)}"></div>
  <div><h1 class="glitch" id="cname" aria-label="${e((x.fullName||x.name).toUpperCase())}" data-text="${e((x.fullName||x.name).toUpperCase())}">${e((x.fullName||x.name).toUpperCase())}</h1>
  ${x.species?`<p class="meta">${e(x.species)}</p>`:''}<p class="meta"><b>${e(x.title)}</b></p>
- ${x.owner?`<p class="meta">USER: <b>${e(x.owner)}</b></p>`:''}${x.note?`<p class="note">${e(x.note)}</p>`:''}<div class="lore">${ps([x.intro])}</div>
+ ${x.note?`<p class="note">${e(x.note)}</p>`:''}<div class="lore">${ps([x.intro])}</div>
  ${(x.links||[]).length?`<div class="links">${x.links.map(l=>`<a class="btn" href="${e(l.url)}" target="_blank" rel="noopener">${e(l.label)}</a>`).join('')}</div>`:''}</div></section>
  ${(x.lore||[]).filter(Boolean).length?`<section class="panel lore"><h2>LORE</h2>${ps(x.lore)}</section>`:''}
  <section class="panel"><h2>REFERENCE IMAGES</h2><div class="gallery">${(x.references||[]).map(g=>`<img src="${e(g)}" data-full="${e(g)}" alt="${e(x.name)} reference" loading="lazy">`).join('')}${Array.from({length:Math.max(0,3-(x.references||[]).length)},()=>'<div class="slot">Reference slot<br><small>add to data/characters.js</small></div>').join('')}</div></section>
