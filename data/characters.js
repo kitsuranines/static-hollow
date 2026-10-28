@@ -88,8 +88,9 @@ window.CHARACTERS = [
       "He judges accordingly."
     ],
     "references": [
+      "assets/img/gallery/roger-2.webp",
       "assets/img/gallery/roger-1.webp",
-      "assets/img/gallery/roger-2.webp"
+      "assets/img/gallery/roger-3.webp"
     ],
     "links": []
   },
