@@ -31,9 +31,9 @@ window.CHARACTERS = [
       "She might as well give them a show."
     ],
     "references": [
-      "assets/img/gallery/nines-1.webp",
       "assets/img/gallery/nines-2.webp",
       "assets/img/gallery/nines-3.webp",
+      "assets/img/gallery/nines-1.webp",
       "assets/img/gallery/nines-4b.webp"
     ],
     "links": []
