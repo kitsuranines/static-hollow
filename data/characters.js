@@ -74,7 +74,9 @@ window.CHARACTERS = [
     ],
     "references": [
       "assets/img/gallery/eights-1.webp",
-      "assets/img/gallery/eights-2.webp"
+      "assets/img/gallery/eights-2.webp",
+      "assets/img/gallery/eights-3.webp",
+      "assets/img/gallery/eights-4.webp"
     ],
     "links": []
   },
