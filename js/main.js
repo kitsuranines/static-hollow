@@ -13,10 +13,10 @@ if(d){const list=C,id=new URLSearchParams(location.search).get('id'),i=Math.max(
  document.title=x.name+' — Static Hollow';
  const base='character.html?id=',prev=list[(i-1+list.length)%list.length],next=list[(i+1)%list.length];
  const ps=a=>(a||[]).filter(Boolean).map(p=>`<p>${e(p)}</p>`).join('');
- d.innerHTML=`<section class="panel intro"><img src="${e(x.image)}" alt="${e(x.name)}" data-full="${e(x.image)}">
+ d.innerHTML=`<section class="panel intro"><div class="gl" id="mainimg"><img src="${e(x.image)}" alt="${e(x.name)}" data-full="${e(x.image)}"></div>
  <div><h1 class="glitch" data-text="${e((x.fullName||x.name).toUpperCase())}">${e((x.fullName||x.name).toUpperCase())}</h1>
  ${x.species?`<p class="meta">${e(x.species)}</p>`:''}<p class="meta"><b>${e(x.title)}</b></p>
- ${x.owner?`<p class="meta">Player: <b>${e(x.owner)}</b></p>`:''}${x.note?`<p class="note">${e(x.note)}</p>`:''}<div class="lore">${ps([x.intro])}</div>
+ ${x.owner?`<p class="meta">USER: <b>${e(x.owner)}</b></p>`:''}${x.note?`<p class="note">${e(x.note)}</p>`:''}<div class="lore">${ps([x.intro])}</div>
  ${(x.links||[]).length?`<div class="links">${x.links.map(l=>`<a class="btn" href="${e(l.url)}" target="_blank" rel="noopener">${e(l.label)}</a>`).join('')}</div>`:''}</div></section>
  ${(x.lore||[]).filter(Boolean).length?`<section class="panel lore"><h2>LORE</h2>${ps(x.lore)}</section>`:''}
  <section class="panel"><h2>REFERENCE IMAGES</h2><div class="gallery">${(x.references||[]).map(g=>`<img src="${e(g)}" data-full="${e(g)}" alt="${e(x.name)} reference" loading="lazy">`).join('')}${Array.from({length:Math.max(0,3-(x.references||[]).length)},()=>'<div class="slot">Reference slot<br><small>add to data/characters.js</small></div>').join('')}</div></section>
@@ -37,3 +37,10 @@ for(const p of P){p.y-=p.v;p.t+=.03;p.x+=p.s+Math.sin(p.t)*.25;if(p.y<-10)Object
 const a=p.a*(.6+.4*Math.sin(p.t*3));x.fillStyle=`rgba(250,116,0,${a})`;x.shadowColor='#FA7400';x.shadowBlur=8;x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fill();
 if(p.r>1.9){x.fillRect(p.x-p.r*3,p.y-.3,p.r*6,.6);x.fillRect(p.x-.3,p.y-p.r*3,.6,p.r*6)}}
 requestAnimationFrame(f)}requestAnimationFrame(f)})();
+
+(function(){const w=document.getElementById('mainimg');if(!w||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const img=w.querySelector('img'),go=()=>{const src=img.currentSrc||img.src;
+ ['r','b','s1','s2','s3'].forEach(k=>{const c=document.createElement('div');c.className='gl-l gl-'+k;c.style.backgroundImage=`url("${src}")`;c.setAttribute('aria-hidden','true');w.appendChild(c)});
+ w.classList.add('glitching');setTimeout(()=>{w.classList.remove('glitching');w.querySelectorAll('.gl-l').forEach(n=>n.remove())},1100)};
+ img.complete?go():img.addEventListener('load',go,{once:true});
+ addEventListener('pageshow',ev=>{if(ev.persisted)go()});})();
