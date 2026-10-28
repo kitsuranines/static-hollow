@@ -117,5 +117,33 @@ window.CHARACTERS = [
       "assets/img/gallery/dubious-creature-1.webp"
     ],
     "links": []
+  },
+  {
+    "id": "ysr",
+    "name": "YSR",
+    "fullName": "YSR",
+    "title": "",
+    "species": "",
+    "owner": "",
+    "note": "",
+    "image": "assets/img/characters/ysr.webp",
+    "intro": "",
+    "lore": [],
+    "references": [],
+    "links": []
+  },
+  {
+    "id": "lythria",
+    "name": "Lythria",
+    "fullName": "LYTHRIA",
+    "title": "",
+    "species": "",
+    "owner": "",
+    "note": "",
+    "image": "assets/img/characters/lythria.webp",
+    "intro": "",
+    "lore": [],
+    "references": [],
+    "links": []
   }
 ];
