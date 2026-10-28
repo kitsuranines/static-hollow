@@ -5,7 +5,7 @@ const card=(x,href,sub)=>`<a class="card" href="${href}"><div class="frame"><img
 const cg=document.getElementById('char-grid');
 if(cg){const q=document.getElementById('q'),cnt=document.getElementById('count'),em=document.getElementById('empty');
  const draw=()=>{const t=(q.value||'').trim().toLowerCase(),l=C.filter(c=>[c.name,c.fullName,c.title].join(' ').toLowerCase().includes(t));
-  cg.innerHTML=l.map(c=>card(c,'character.html?id='+encodeURIComponent(c.id),c.title+(c.owner?' · by '+c.owner:''))).join('');em.hidden=l.length>0;cnt.textContent=l.length+' / '+C.length;};
+  cg.innerHTML=l.map(c=>card(c,'character.html?id='+encodeURIComponent(c.id),c.title)).join('');em.hidden=l.length>0;cnt.textContent=l.length+' / '+C.length;};
  q.addEventListener('input',draw);draw();}
 const d=document.getElementById('detail');
 if(d){const list=C,id=new URLSearchParams(location.search).get('id'),i=Math.max(0,list.findIndex(x=>x.id===id)),x=list[i];
