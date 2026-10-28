@@ -43,7 +43,6 @@ window.CHARACTERS = [
       "assets/img/gallery/nines-10.webp",
       "assets/img/gallery/nines-11.webp",
       "assets/img/gallery/nines-12.webp",
-      "assets/img/gallery/nines-13.webp",
       "assets/img/gallery/nines-14.webp",
       "assets/img/gallery/nines-15.webp"
     ],
