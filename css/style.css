@@ -9,9 +9,9 @@ a{color:var(--o)}
 .brand{font-weight:800;letter-spacing:.25em;text-decoration:none}
 .top nav a{margin-left:1.2rem;text-decoration:none;color:var(--w);text-transform:uppercase;letter-spacing:.12em;font-size:.85rem}.top nav a:hover{color:var(--o)}
 main{max-width:1150px;margin:0 auto;padding:1rem 1.2rem 3rem}
-.hero{display:flex;justify-content:center;padding:1rem 0}
-.logo{width:min(640px,88vw);height:auto;filter:drop-shadow(0 0 25px rgba(250,116,0,.35))}
-.sec-title{text-align:center;color:var(--o);letter-spacing:.3em;font-weight:800;font-size:clamp(1.3rem,4vw,2.2rem);margin:2.5rem 0 1.4rem}
+
+.logo{width:min(440px,80vw);height:auto;filter:drop-shadow(0 0 25px rgba(250,116,0,.35))}
+.sec-title{text-align:center;color:var(--o);letter-spacing:.3em;font-weight:800;font-size:clamp(1.3rem,4vw,2.2rem);margin:1rem 0 1.2rem}
 .center{text-align:center}.sub{opacity:.8;margin-top:-.8rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;justify-items:center}
 .card{display:block;width:100%;max-width:270px;text-decoration:none;color:var(--w);background:rgba(0,0,0,.8);border:1px solid rgba(250,116,0,.45);padding:.6rem;transition:transform .25s,box-shadow .25s}
@@ -43,3 +43,22 @@ footer{text-align:center;padding:2rem;opacity:.6;font-size:.8rem}
 .glitch-img{animation:gi 9s infinite}@keyframes gi{0%,96%,100%{transform:none;filter:drop-shadow(0 0 25px rgba(250,116,0,.35))}97%{transform:translate(-4px,1px) skewX(2deg);filter:drop-shadow(-4px 0 #FA7400) drop-shadow(4px 0 #fff)}98%{transform:translate(3px,-1px)}}
 @media (max-width:760px){.intro{grid-template-columns:1fr}.top nav a{margin-left:.8rem}.brand{letter-spacing:.12em}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}.card h3{font-size:.9rem}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+.search{display:flex;align-items:center;gap:.8rem;max-width:640px;margin:0 auto 1.6rem}
+.search input{flex:1;font:inherit;font-size:1.1rem;padding:.85rem 1.1rem;color:var(--w);background:rgba(0,0,0,.85);border:1px solid var(--o);outline:none;letter-spacing:.05em}
+.search input:focus{box-shadow:0 0 0 2px rgba(250,116,0,.4),0 0 25px rgba(250,116,0,.3)}.search span{color:var(--o);font-size:.85rem;white-space:nowrap}
+.slot{aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px dashed rgba(250,116,0,.6);color:rgba(250,116,0,.8);text-transform:uppercase;letter-spacing:.15em;font-size:.8rem;background:rgba(0,0,0,.5)}.slot small{opacity:.7;text-transform:none;letter-spacing:0}
+
+body[data-page=home] main{padding-top:0}
+.hero{position:relative;min-height:calc(100svh - 50px);display:flex;align-items:center;justify-content:center;text-align:center;margin:0 -1.2rem}
+#sparks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-in{position:relative;display:flex;flex-direction:column;align-items:center}
+.hero .logo{width:min(620px,86vw,70svh)}
+.intro-logo{animation:flick 1.8s steps(1) both,gi 9s 2s infinite}
+@keyframes flick{0%{opacity:0;filter:blur(6px)}8%{opacity:.6}10%{opacity:0}18%{opacity:.8;transform:translateX(-6px)}20%{opacity:.1}30%{opacity:1;transform:translateX(4px) skewX(-3deg);filter:drop-shadow(-6px 0 #FA7400) drop-shadow(6px 0 #fff)}34%{opacity:.4;transform:none}45%,100%{opacity:1;transform:none;filter:drop-shadow(0 0 25px rgba(250,116,0,.35))}}
+.tag{text-shadow:0 0 6px #000,0 0 12px #000;margin:.4rem 0 1.6rem;letter-spacing:.35em;text-transform:uppercase;font-size:clamp(.7rem,2vw,.9rem);opacity:0;animation:fade 1.5s 1.6s forwards}
+.enter{display:inline-flex;flex-direction:column;align-items:center;color:var(--o);text-decoration:none;letter-spacing:.3em;text-transform:uppercase;font-weight:600;padding:.8rem 1.6rem;border:1px solid var(--o);background:rgba(0,0,0,.6);opacity:0;animation:fade 1.5s 2.2s forwards;transition:background .2s,color .2s}
+.enter:hover{background:var(--o);color:#000}.chev{font-size:1.4rem;line-height:.6;animation:bob 1.8s infinite}
+@keyframes fade{to{opacity:1}}@keyframes bob{50%{transform:translateY(5px)}}
+#directory{scroll-margin-top:60px;padding-top:1rem}
+@media (prefers-reduced-motion:reduce){.tag,.enter{opacity:1}#sparks{display:none}}
