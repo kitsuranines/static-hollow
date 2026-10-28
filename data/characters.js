@@ -93,7 +93,12 @@ window.CHARACTERS = [
     "image": "assets/img/characters/dubious-creature.webp",
     "intro": "",
     "lore": [
-      "The Dubious Creatures are the many small mascot-beings that gather around Nines like an ever-present audience. They are silly, strange, and vaguely unsettling: round-bodied little creatures with one giant eye, little horns, fluffy tails, oversized smiles, and rows of sharp teeth. Yellow stitches hold their small bodies together, as though each of them was hastily pieced into existence and somehow kept going anyway. No one is entirely sure where they came from, though the most common theory is that they formed from the energy surrounding Nines herself—tiny byproducts of attention, spectacle, and collective fascination. Usually playful and harmless, they tend to appear wherever Nines is being observed, discussed, or entertained. They watch, they grin, and they linger. Individually, they are ridiculous. In groups, they become concerning."
+      "The Dubious Creatures are the many small mascot-beings that gather around Nines like an ever-present audience.",
+      "They are silly, strange, and vaguely unsettling: round-bodied little creatures with one giant eye, little horns, fluffy tails, oversized smiles, and rows of sharp teeth. Yellow stitches hold their small bodies together, as if each of them was hastily pieced into existence and somehow kept going anyway.",
+      "No one is entirely sure where they came from. The most common theory is that they formed from the energy surrounding Nines herself—tiny byproducts of attention, spectacle, and collective fascination.",
+      "Though usually playful and harmless, they tend to appear wherever Nines is being observed, discussed, or entertained. They watch, they grin, and they linger.",
+      "Individually, they are ridiculous.",
+      "In groups, they become concerning."
     ],
     "references": [
       "assets/img/gallery/dubious-creature-1.webp"
