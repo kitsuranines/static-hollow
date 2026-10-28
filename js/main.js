@@ -14,7 +14,7 @@ if(d){const list=C,id=new URLSearchParams(location.search).get('id'),i=Math.max(
  const base='character.html?id=',prev=list[(i-1+list.length)%list.length],next=list[(i+1)%list.length];
  const ps=a=>(a||[]).filter(Boolean).map(p=>`<p>${e(p)}</p>`).join('');
  d.innerHTML=`<section class="panel intro"><div class="gl" id="mainimg"><img src="${e(x.image)}" alt="${e(x.name)}" data-full="${e(x.image)}"></div>
- <div><h1 class="glitch scr" id="cname" aria-label="${e((x.fullName||x.name).toUpperCase())}" data-text="${e((x.fullName||x.name).toUpperCase())}"><span class="scr-real">${e((x.fullName||x.name).toUpperCase())}</span></h1>
+ <div><h1 class="glitch" id="cname" aria-label="${e((x.fullName||x.name).toUpperCase())}" data-text="${e((x.fullName||x.name).toUpperCase())}">${e((x.fullName||x.name).toUpperCase())}</h1>
  ${x.species?`<p class="meta">${e(x.species)}</p>`:''}<p class="meta"><b>${e(x.title)}</b></p>
  ${x.owner?`<p class="meta">USER: <b>${e(x.owner)}</b></p>`:''}${x.note?`<p class="note">${e(x.note)}</p>`:''}<div class="lore">${ps([x.intro])}</div>
  ${(x.links||[]).length?`<div class="links">${x.links.map(l=>`<a class="btn" href="${e(l.url)}" target="_blank" rel="noopener">${e(l.label)}</a>`).join('')}</div>`:''}</div></section>
@@ -53,15 +53,28 @@ w.addEventListener('animationstart',()=>{w.dataset.played=1},{once:true});
 addEventListener('pageshow',ev=>{if(ev.persisted){busy=false;go()}});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!w.dataset.played)go()});})();
 
-(function(){const h=document.getElementById('cname');if(!h)return;if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-const real=h.querySelector('.scr-real'),T=real.textContent,G='#_%?!@$&*/\\<>[]{}=+~^|░▒▓█▚▞¥§Ø∆※'.split(''),Z=['\u0336','\u0337','\u0334'];
-const ov=document.createElement('span');ov.className='scr-ov';ov.setAttribute('aria-hidden','true');h.appendChild(ov);
-let t0=null;const D=1100,rnd=a=>a[Math.random()*a.length|0];
-function run(){h.classList.add('scrambling');t0=performance.now();requestAnimationFrame(f)}
-function f(now){const p=Math.min(1,(now-t0)/D);let out='';
- for(let i=0;i<T.length;i++){const ch=T[i],lock=(i/T.length)*.7+.25;
-  if(ch===' '||p>=lock+Math.random()*.05){out+=ch===' '?' ':(p<lock+.08&&Math.random()<.25?'<i class="fl">'+ch+'</i>':ch.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])));continue}
-  let g=rnd(G).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));if(Math.random()<.08)g+=rnd(Z);
-  out+=Math.random()<.3?'<b class="o">'+g+'</b>':g}
- ov.innerHTML=out;if(p<1)setTimeout(()=>requestAnimationFrame(f),45);else{h.classList.remove('scrambling');ov.innerHTML=''}}
+(function(){const box=document.querySelector('.intro > div:not(.gl)');if(!box)return;
+const els=[...box.querySelectorAll('h1,.meta,.note')];if(!els.length)return;
+els.forEach(el=>{if(!el.getAttribute('aria-label'))el.setAttribute('aria-label',el.textContent.trim())});
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+const G='#_%?!@$&*/\\<>[]{}=+~^|░▒▓█▚▞¥§Ø∆※'.split(''),Z=['\u0336','\u0337','\u0334'],rnd=a=>a[Math.random()*a.length|0];
+const items=els.map(el=>{el.classList.add('scr');let real=el.querySelector(':scope > .scr-real');
+ if(!real){real=document.createElement('span');real.className='scr-real';while(el.firstChild)real.appendChild(el.firstChild);el.appendChild(real)}
+ const ov=document.createElement('span');ov.className='scr-ov';ov.setAttribute('aria-hidden','true');el.appendChild(ov);
+ return {el,real,ov}});
+function scr(it,p){it.ov.innerHTML='';const clone=it.real.cloneNode(true);const tw=document.createTreeWalker(clone,4);const nodes=[];while(tw.nextNode())nodes.push(tw.currentNode);
+ const total=nodes.reduce((s,n)=>s+n.data.length,0)||1;let idx=0;
+ nodes.forEach(n=>{const frag=document.createDocumentFragment();for(const ch of n.data){const lock=(idx++/total)*.7+.25;
+  if(/\s/.test(ch)||p>=lock+Math.random()*.05){if(p<lock+.08&&Math.random()<.25&&!/\s/.test(ch)){const i=document.createElement('i');i.className='fl';i.textContent=ch;frag.appendChild(i)}else frag.appendChild(document.createTextNode(ch));continue}
+  let g=rnd(G);if(Math.random()<.08)g+=rnd(Z);
+  if(Math.random()<.3){const o=document.createElement('b');o.className='o';o.textContent=g;frag.appendChild(o)}else frag.appendChild(document.createTextNode(g))}
+  n.parentNode.replaceChild(frag,n)});
+ while(clone.firstChild)it.ov.appendChild(clone.firstChild)}
+let gen=0;
+function run(){const my=++gen,t0=performance.now(),D=900,STEP=220;
+ items.forEach(it=>{it.el.classList.add('scrambling');scr(it,0)});
+ (function f(){if(my!==gen)return;const t=performance.now()-t0;let alive=false;
+  items.forEach((it,k)=>{const p=Math.max(0,Math.min(1,(t-k*STEP)/D));
+   if(p>=1){if(it.el.classList.contains('scrambling')){it.el.classList.remove('scrambling');it.ov.innerHTML=''}}else{alive=true;scr(it,p)}});
+  if(alive)setTimeout(()=>requestAnimationFrame(f),45)})()}
 run();addEventListener('pageshow',e=>{if(e.persisted)run()});})();

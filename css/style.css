@@ -83,10 +83,12 @@ body[data-page=home] main{padding-top:0}
 @supports not (mix-blend-mode:screen){.gl-r,.gl-b{filter:sepia(1) saturate(8) hue-rotate(170deg);-webkit-filter:sepia(1) saturate(8) hue-rotate(170deg);opacity:.5;animation:glb 1s steps(1) forwards}}
 
 .scr{position:relative}
-.scr-ov{position:absolute;left:0;top:0;right:0;white-space:normal;pointer-events:none}
+.scr-ov{position:absolute;left:0;top:0;right:0;pointer-events:none;color:inherit}
 .scrambling .scr-real{visibility:hidden}
 .scrambling::before,.scrambling::after{display:none}
 .scrambling .scr-ov{animation:scj .12s steps(2) infinite;text-shadow:-2px 0 rgba(255,255,255,.75),2px 0 rgba(250,116,0,.9)}
 .scr-ov .o{color:#fff;font-weight:800;text-shadow:0 0 8px #FA7400}.scr-ov .fl{opacity:.5}
-.scr-ov .o:nth-child(odd){color:#FA7400;text-shadow:2px 0 #fff}
+.scr-ov .o:nth-of-type(odd){color:#FA7400;text-shadow:2px 0 #fff}
 @keyframes scj{0%{-webkit-transform:translate(1px,0);transform:translate(1px,0)}50%{-webkit-transform:translate(-2px,1px);transform:translate(-2px,1px)}100%{-webkit-transform:translate(0,-1px);transform:translate(0,-1px)}}
+.note.scr .scr-ov{left:.8rem}
+.scr-ov b:not(.o){color:var(--o)}
