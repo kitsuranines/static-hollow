@@ -34,7 +34,18 @@ window.CHARACTERS = [
       "assets/img/gallery/nines-2.webp",
       "assets/img/gallery/nines-3.webp",
       "assets/img/gallery/nines-1.webp",
-      "assets/img/gallery/nines-4b.webp"
+      "assets/img/gallery/nines-4b.webp",
+      "assets/img/gallery/nines-5.webp",
+      "assets/img/gallery/nines-6.webp",
+      "assets/img/gallery/nines-7.webp",
+      "assets/img/gallery/nines-8.webp",
+      "assets/img/gallery/nines-9.webp",
+      "assets/img/gallery/nines-10.webp",
+      "assets/img/gallery/nines-11.webp",
+      "assets/img/gallery/nines-12.webp",
+      "assets/img/gallery/nines-13.webp",
+      "assets/img/gallery/nines-14.webp",
+      "assets/img/gallery/nines-15.webp"
     ],
     "links": []
   },
