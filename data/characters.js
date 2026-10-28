@@ -33,7 +33,8 @@ window.CHARACTERS = [
     "references": [
       "assets/img/gallery/nines-1.webp",
       "assets/img/gallery/nines-2.webp",
-      "assets/img/gallery/nines-3.webp"
+      "assets/img/gallery/nines-3.webp",
+      "assets/img/gallery/nines-4.webp"
     ],
     "links": []
   },
