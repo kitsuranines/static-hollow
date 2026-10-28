@@ -142,7 +142,7 @@ window.CHARACTERS = [
     "note": "",
     "image": "assets/img/characters/lythria.webp",
     "intro": "",
-    "lore": [],
+    "lore": ["Lythria was imprisoned in Umbra by the Order, an organisation formed by Earth's most powerful magical humans to control magic, influence thought, and suppress anyone who dared to act beyond their authority. What began as a desire for revenge became something far more personal when she encountered Nines, a one-tailed kitsune destined to bring about the Order's downfall.", "Across countless timelines, Nines has unknowingly repeated the same fate, with each missing tail representing a timeline in which she died. Nines remembers none of these lives, but Lythria remembers losing her friend again and again. With every timeline, her purpose shifted from destroying the Order to protecting Nines at any cost.", "Now, with only one tail remaining, Lythria believes this is their final chance. She is willing to turn to blood magic — a forbidden power that greatly amplifies her abilities but rapidly consumes her mana — if it means saving her friend.", "From her gothic kingdom in the darkness between universes, Lythria prepares for a final confrontation with the Order. Her silver pocket watch can reverse time by up to 24 hours, Luna converts lunar energy into shadow mana, and Nox remains her faithful shadow familiar."],
     "references": ["assets/img/gallery/lythria-1.webp"],
     "links": []
   },
