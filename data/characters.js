@@ -48,7 +48,17 @@ window.CHARACTERS = [
     "image": "assets/img/characters/eights.webp",
     "intro": "",
     "lore": [
-      "Eights is Nines’ husband and the one presence around her that perception seems unable to distort. He wears a thick burlap mask with deep, dark eyeholes and tall wolf ears built into its silhouette, and no one has ever seen the face beneath it. Some question whether there is one. Where Nines takes the shape of a fox, Eights is unmistakably wolf-like: quiet, watchful, imposing, and far more difficult to read. Rumors refuse to settle around him, descriptions contradict each other, and even those who know him struggle to explain exactly what he is. There are old stories of wandering figures who surrendered their faces, names, or identities and became something no longer entirely human, but Eights has never confirmed any of them. His presence has a strange effect on Nines: around him, the countless expectations and projections surrounding her quiet down, the noise fades, and she becomes singular again. Perhaps it is because Eights sees the person beneath the Construct, or perhaps something without a face simply has no use for appearances. Whatever he is, Nines trusts him completely."
+      "Eights is Nines’ husband and the one presence around her that perception seems unable to distort.",
+      "He wears a thick burlap mask with deep, dark eyeholes and tall wolf ears built into its silhouette. No one has ever seen the face beneath it.",
+      "Some question whether there is one.",
+      "Where Nines takes the shape of a fox, Eights is unmistakably wolf-like: quiet, watchful, imposing, and far more difficult to read.",
+      "Rumors refuse to settle around him. Descriptions contradict each other. Even those who know him struggle to explain exactly what he is.",
+      "There are old stories of wandering figures who surrendered their faces, names, or identities and became something no longer entirely human.",
+      "Eights has never confirmed any of them.",
+      "His presence has a strange effect on Nines. Around him, the countless expectations and projections surrounding her quiet down. The noise fades. She becomes singular again.",
+      "Perhaps it is because Eights sees the person beneath the Construct.",
+      "Or perhaps something without a face simply has no use for appearances.",
+      "Whatever he is, Nines trusts him completely."
     ],
     "references": [
       "assets/img/gallery/eights-1.webp"
