@@ -145,5 +145,19 @@ window.CHARACTERS = [
     "lore": [],
     "references": [],
     "links": []
+  },
+  {
+    "id": "yui-kaminari",
+    "name": "Yui Kaminari",
+    "fullName": "YUI KAMINARI",
+    "title": "",
+    "species": "",
+    "owner": "",
+    "note": "",
+    "image": "assets/img/characters/yui-kaminari.webp",
+    "intro": "",
+    "lore": [],
+    "references": [],
+    "links": []
   }
 ];
